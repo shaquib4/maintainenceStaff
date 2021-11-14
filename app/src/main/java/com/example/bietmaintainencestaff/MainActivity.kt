@@ -3,6 +3,7 @@ package com.example.bietmaintainencestaff
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.chaos.view.PinView
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var storedVerificationId: String
     var firebaseUser: FirebaseUser? = null
     private var phone:String?="400"
+    private lateinit var otp:PinView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             if (code != null) {
 
                 verifyVerification(code)
-
+                otp.setText(code)
             }
         }
 

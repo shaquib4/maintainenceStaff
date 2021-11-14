@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:alpha="0.5"
+        android:alpha="0.4"
         android:src="@drawable/service"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
