@@ -19,5 +19,6 @@ class MainActivity2 : AppCompatActivity() {
             intent.putExtra("phone",edtMobileNumber.text.toString())
             startActivity(intent)
         }
+      /*  implementation 'com.chaos.view:pinview:1.4.4'*/
     }
 }
