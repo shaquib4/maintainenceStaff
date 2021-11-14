@@ -38,6 +38,6 @@ class MainActivity2 : AppCompatActivity() {
                 Toast.makeText(this,"You are not eligible for this",Toast.LENGTH_SHORT).show()
             }
         }
-      /*  implementation 'com.chaos.view:pinview:1.4.4'*/
+
     }
 }
