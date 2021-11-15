@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BietMaintainenceStaff">
-        <activity android:name=".ActivityCompletedRequests"></activity>
+        <activity android:name=".DescriptionActivity"></activity>
+        <activity android:name=".ActivityCompletedRequests" />
         <activity android:name=".ActivityOngoingRequests" />
         <activity android:name=".ActivityPendingRequests" />
         <activity android:name=".AddYourStaff" />
