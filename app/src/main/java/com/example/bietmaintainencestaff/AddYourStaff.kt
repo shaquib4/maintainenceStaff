@@ -19,6 +19,7 @@ class AddYourStaff : AppCompatActivity() {
         setContentView(R.layout.activity_add_your_staff)
         edtStaffNo=findViewById(R.id.edtStaffNumber)
         edtStaffName=findViewById(R.id.edtStaffName)
+        btnConfirm=findViewById(R.id.btnConfirmStaff)
         timestamp=System.currentTimeMillis().toString()
         databaseReference=FirebaseDatabase.getInstance().reference.child("Staff").child("JE")
         btnConfirm.setOnClickListener {
@@ -36,7 +37,7 @@ class AddYourStaff : AppCompatActivity() {
                     staffMap["id"]=timestamp
                     staffMap["name"]=edtStaffName.text.toString()
                     staffMap["mobNo"]=edtStaffNo.text.toString()
-                    databaseReference.child(timestamp).updateChildren(staffMap).addOnSuccessListener {
+                    databaseReference.child("Assistants").child(timestamp).updateChildren(staffMap).addOnSuccessListener {
                         Toast.makeText(this,"Staff Added Successfully",Toast.LENGTH_SHORT).show()
                     }
                 }

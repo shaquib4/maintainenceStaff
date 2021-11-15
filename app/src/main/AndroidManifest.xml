@@ -14,8 +14,9 @@
         <activity android:name=".ActivityOngoingRequests" />
         <activity android:name=".ActivityPendingRequests" />
         <activity android:name=".AddYourStaff" />
-        <activity android:name=".MainActivity2" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Home"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

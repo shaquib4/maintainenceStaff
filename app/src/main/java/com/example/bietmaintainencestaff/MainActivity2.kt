@@ -3,9 +3,11 @@ package com.example.bietmaintainencestaff
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class MainActivity2 : AppCompatActivity() {
@@ -30,6 +32,8 @@ class MainActivity2 : AppCompatActivity() {
 
         })
         btnSubmit.setOnClickListener {
+            Log.e("phone","$reqPhone")
+
             if(edtMobileNumber.text.toString()==reqPhone){
                 val intent=Intent(this,MainActivity::class.java)
                 intent.putExtra("phone",reqPhone)
@@ -39,5 +43,14 @@ class MainActivity2 : AppCompatActivity() {
             }
         }
 
+    }
+
+   public override fun onStart() {
+        super.onStart()
+        val user= FirebaseAuth.getInstance().currentUser
+        if (user!=null){
+            startActivity(Intent(this,Home::class.java))
+            finish()
+        }
     }
 }
