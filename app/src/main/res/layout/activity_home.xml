@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#637BF2"
+        android:padding="10dp"
+        android:src="@drawable/service"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Requests:"
+        android:textColor="#637BF2"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.12" />
+<RelativeLayout
+    android:id="@+id/rl"
+    android:layout_marginTop="15dp"
+    android:layout_marginStart="22dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+
+
+        android:background="@drawable/bg_circle"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="1"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_below="@id/relativeLayout1"
+        android:id="@+id/textViewPending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:text="Pending"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout1" />
+</RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_marginStart="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toEndOf="@+id/rl"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerHorizontal="true"
+
+
+            android:background="@drawable/bg_circle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="1"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/relativeLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:text="In Progress"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_marginStart="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toEndOf="@+id/rl1"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerHorizontal="true"
+
+
+            android:background="@drawable/bg_circle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="1"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textViewCompleted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relativeLayout2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:text="Completed"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Staffs:"
+        android:textColor="#637BF2"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl"
+        app:layout_constraintVertical_bias="0.195" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="24dp"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.191">
+   <TextView
+    android:layout_weight="1"
+       android:elevation="7dp"
+    android:layout_width="0dp"
+      android:layout_height="match_parent"
+       android:text="Your Staff"
+       android:textStyle="bold"
+       android:textColor="#637BF2"
+       android:textSize="16sp"
+       android:layout_marginEnd="5dp"
+       android:gravity="center"
+       android:textAlignment="center"
+    android:background="@drawable/bg_rectangle_edt"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="Add Staff"
+            android:textColor="#637BF2"
+            android:textStyle="bold"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_button"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
