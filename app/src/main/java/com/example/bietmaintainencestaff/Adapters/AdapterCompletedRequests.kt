@@ -1,10 +1,12 @@
 package com.example.bietmaintainencestaff.Adapters
 
+import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bietmaintainencestaff.Modals.ModalPendingRequest
 
-class AdapterCompletedRequests:RecyclerView.Adapter<AdapterCompletedRequests.HolderCompletedRequests>() {
+class AdapterCompletedRequests(val context: Context,private val listCompletedRequest:List<ModalPendingRequest>):RecyclerView.Adapter<AdapterCompletedRequests.HolderCompletedRequests>() {
     class HolderCompletedRequests(view: View) : RecyclerView.ViewHolder(view) {
 
     }
@@ -18,7 +20,7 @@ class AdapterCompletedRequests:RecyclerView.Adapter<AdapterCompletedRequests.Hol
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return listCompletedRequest.size
     }
 
 }
