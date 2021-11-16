@@ -32,51 +32,55 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.12" />
-<RelativeLayout
-    android:id="@+id/rl"
-    android:layout_marginTop="15dp"
-    android:layout_marginStart="22dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+
     <RelativeLayout
-        android:layout_centerHorizontal="true"
-        android:id="@+id/relativeLayout1"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-
-
-        android:background="@drawable/bg_circle"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="1"/>
-    </RelativeLayout>
-    <TextView
-        android:layout_below="@id/relativeLayout1"
-        android:id="@+id/textViewPending"
+        android:id="@+id/rl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
-        android:text="Pending"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout1" />
-</RelativeLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerHorizontal="true"
+
+
+            android:background="@drawable/bg_circle">
+
+            <TextView
+                android:id="@+id/pendingCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="1"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textViewPending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relativeLayout1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:text="Pending"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout1" />
+    </RelativeLayout>
 
 
     <RelativeLayout
         android:id="@+id/rl1"
-        android:layout_marginStart="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toEndOf="@+id/rl"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
@@ -91,6 +95,7 @@
             android:background="@drawable/bg_circle">
 
             <TextView
+                android:id="@+id/inProgressCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -119,8 +124,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/rl1"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
@@ -135,6 +140,7 @@
             android:background="@drawable/bg_circle">
 
             <TextView
+                android:id="@+id/completedCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -175,38 +181,41 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:orientation="horizontal"
         android:layout_marginHorizontal="24dp"
+        android:orientation="horizontal"
         android:weightSum="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.191">
-   <TextView
-    android:layout_weight="1"
-       android:elevation="7dp"
-    android:layout_width="0dp"
-      android:layout_height="match_parent"
-       android:text="Your Staff"
-       android:textStyle="bold"
-       android:textColor="#637BF2"
-       android:textSize="16sp"
-       android:layout_marginEnd="5dp"
-       android:gravity="center"
-       android:textAlignment="center"
-    android:background="@drawable/bg_rectangle_edt"/>
+
+        <TextView
+            android:id="@+id/allStaffs"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rectangle_edt"
+            android:elevation="7dp"
+            android:gravity="center"
+            android:text="Your Staff"
+            android:textAlignment="center"
+            android:textColor="#637BF2"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/add_staff"
-            android:layout_weight="1"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button"
             android:gravity="center"
-            android:textSize="16sp"
             android:text="Add Staff"
             android:textColor="#637BF2"
-            android:textStyle="bold"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_button"/>
+            android:textSize="16sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
