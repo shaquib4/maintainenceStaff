@@ -13,7 +13,7 @@ class DescriptionActivity : AppCompatActivity() {
     private lateinit var problem: TextView
     private lateinit var btnApprove: Button
     private lateinit var databaseReference: DatabaseReference
-    private lateinit var databaseRef:DatabaseReference
+    private lateinit var databaseRef: DatabaseReference
     private var requestId: String? = ""
     private var hostel_Name: String = ""
     private var room_num: String = ""
@@ -30,8 +30,9 @@ class DescriptionActivity : AppCompatActivity() {
         requestId = intent.getStringExtra("reqId").toString()
         databaseReference =
             FirebaseDatabase.getInstance().reference.child("Staff").child("JE").child("Requests")
+                .child(hostel_Name)
                 .child("PendingRequests").child(requestId!!)
-        databaseRef=FirebaseDatabase.getInstance().reference.child("Students")
+        databaseRef = FirebaseDatabase.getInstance().reference.child("Students")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 hostel_Name = snapshot.child("hostelName").value.toString()
