@@ -2,6 +2,8 @@ package com.example.bietmaintainencestaff
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.chaos.view.PinView
@@ -18,15 +20,17 @@ class MainActivity : AppCompatActivity() {
     var firebaseUser: FirebaseUser? = null
     private var phone:String?="400"
     private lateinit var otp:PinView
+    private lateinit var progress_verify:ProgressBar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         otp=findViewById(R.id.otp)
+        progress_verify=findViewById(R.id.progress_verify)
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseUser = firebaseAuth.currentUser
         phone=intent.getStringExtra("phone")
         sendVerification("+91$phone")
-
+        progress_verify.visibility = View.VISIBLE
 
     }
 
@@ -77,6 +81,7 @@ class MainActivity : AppCompatActivity() {
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener(this) { task ->
             Toast.makeText(this,"success",Toast.LENGTH_SHORT).show()
             if (task.isSuccessful){
+                progress_verify.visibility = View.GONE
                 startActivity(Intent(this@MainActivity,Home::class.java))
                 finish()
             }

@@ -20,7 +20,7 @@ class ActivityPendingRequests : AppCompatActivity() {
         //recyclerViewPending=findViewById()
         recyclerViewPending.layoutManager = LinearLayoutManager(this)
         databaseReference =
-            FirebaseDatabase.getInstance().reference.child("Staff").child("JE").child("Requests")
+            FirebaseDatabase.getInstance().reference.child("Staff").child("JE").child("Requests").child("")
         databaseReference.child("PendingRequests")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -34,6 +34,7 @@ class ActivityPendingRequests : AppCompatActivity() {
                             i.child("hostelName").value.toString(),
                             i.child("mobNo").value.toString(),
                             i.child("status").value.toString(),
+                            i.child("reqById").value.toString()
                         )
                         (listPendingRequests as ArrayList<ModalPendingRequest>).add(obj)
                     }

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".ActivityDescriptionStaff">
+
+    <TextView
+        android:id="@+id/hostel_name_staff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="Vrindavan Hostel"
+        android:textColor="@color/secondary"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/req_By_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="Ratnakar Chaurasiya"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hostel_name_staff" />
+
+    <TextView
+        android:id="@+id/room_num_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Room F-14"
+
+        android:textColor="#fcfcfc"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/req_By_student" />
+
+    <ImageView
+        android:id="@+id/phoneCall"
+        android:layout_width="50dp"
+        android:layout_height="50sp"
+        android:layout_marginTop="156dp"
+        android:src="@drawable/ic_baseline_local_phone_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintStart_toEndOf="@+id/hostel_name_staff"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Request or Problem:"
+        android:textColor="@color/secondary"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/room_num_student" />
+
+    <TextView
+        android:id="@+id/problem_student"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="3dp"
+        android:text="Fan not working for more than 3 days,it was "
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        app:layout_constraintTop_toBottomOf="@id/textView9"
+        tools:layout_editor_absoluteX="96dp" />
+
+    <TextView
+        android:id="@+id/mat_req"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="3dp"
+        android:text="क्या इसके लिए सामग्री की कोई आवश्यकता है?"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        app:layout_constraintTop_toBottomOf="@id/problem_student"
+        tools:layout_editor_absoluteX="96dp" />
+
+
+    <RadioGroup
+        android:id="@+id/radioRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mat_req"
+        tools:ignore="RelativeOverlap">
+
+        <RadioButton
+            android:id="@+id/material_req_yes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="16dp"
+            android:checked="true"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="3dp"
+            android:text="हां"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            tools:layout_editor_absoluteX="96dp" />
+
+        <RadioButton
+            android:id="@+id/material_req_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="3dp"
+            android:text="नहीं"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            tools:layout_editor_absoluteX="96dp" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/material_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:hint="कृपया सामग्री का वर्णन करे"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="3dp"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        app:layout_constraintTop_toBottomOf="@id/radioRequest"
+        tools:layout_editor_absoluteX="96dp" />
+
+    <Button
+        android:id="@+id/btnSubmitRequest"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/bg_button"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/material_desc"
+        app:layout_constraintVertical_bias="0.187" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

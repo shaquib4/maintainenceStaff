@@ -44,6 +44,7 @@ class AdapterPendingRequests(
         holder.itemView.setOnClickListener {
             val intent=Intent(context, DescriptionActivity::class.java)
             intent.putExtra("reqId",request.requestId.toString())
+            intent.putExtra("reqById",request.reqById.toString())
             context.startActivity(intent)
         }
         try {

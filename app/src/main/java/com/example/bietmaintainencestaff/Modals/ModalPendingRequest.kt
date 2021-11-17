@@ -7,8 +7,9 @@ class ModalPendingRequest(
     val problem:String,
     val hostelName:String,
     val mobNo:String,
-    val status:String
+    val status:String,
+    val reqById:String
 
 ) {
-    constructor():this("","","","","","","")
+    constructor():this("","","","","","","","")
 }
