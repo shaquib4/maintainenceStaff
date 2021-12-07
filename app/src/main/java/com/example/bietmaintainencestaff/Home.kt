@@ -78,7 +78,9 @@ class Home : AppCompatActivity() {
 
         }
         rlPending.setOnClickListener {
-            startActivity(Intent(this, ActivityPendingRequests::class.java))
+            val intent=Intent(this, ActivityPendingRequests::class.java)
+            intent.putExtra("hostel",chooseHostel.selectedItem.toString())
+            startActivity(intent)
         }
         rlCompleted.setOnClickListener {
             startActivity(Intent(this, ActivityCompletedRequests::class.java))

@@ -17,7 +17,8 @@ import java.util.*
 
 class AdapterPendingRequests(
     val context: Context,
-    private val listPendingRequests: List<ModalPendingRequest>
+    private val listPendingRequests: List<ModalPendingRequest>,
+    private val hostelName:String
 ) : RecyclerView.Adapter<AdapterPendingRequests.HolderPendingRequests>() {
     class HolderPendingRequests(view: View) : RecyclerView.ViewHolder(view) {
         val reqId: TextView = view.findViewById(R.id.ReqId)
@@ -26,6 +27,7 @@ class AdapterPendingRequests(
         val roomNo: TextView = view.findViewById(R.id.textView5)
         val status: TextView = view.findViewById(R.id.status)
         val requestTime: TextView = view.findViewById(R.id.timeOfRequest)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderPendingRequests {
