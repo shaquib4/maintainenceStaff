@@ -11,14 +11,19 @@ import com.google.android.gms.tasks.TaskExecutors
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
+import com.google.firebase.database.*
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
+    private  lateinit var dataReference:DatabaseReference
     private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     lateinit var storedVerificationId: String
     var firebaseUser: FirebaseUser? = null
     private var phone:String?="400"
+    private var staffName:String?=null
+    private var staffUid:String?=null
+    private var nBool:Boolean?=null
     private lateinit var otp:PinView
     private lateinit var progress_verify:ProgressBar
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseUser = firebaseAuth.currentUser
         phone=intent.getStringExtra("phone")
+        staffName=intent.getStringExtra("name")
+        staffUid=intent.getStringExtra("uid")
+        nBool=intent.getBooleanExtra("bool",false)
+
         sendVerification("+91$phone")
         progress_verify.visibility = View.VISIBLE
 
@@ -79,11 +88,31 @@ class MainActivity : AppCompatActivity() {
 
     private fun signUp(credential: PhoneAuthCredential) {
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener(this) { task ->
-            Toast.makeText(this,"success",Toast.LENGTH_SHORT).show()
+
             if (task.isSuccessful){
                 progress_verify.visibility = View.GONE
-                startActivity(Intent(this@MainActivity,Home::class.java))
-                finish()
+                if (nBool==true){
+                    val user=FirebaseAuth.getInstance().currentUser
+                    val uid=user!!.uid
+                    dataReference=FirebaseDatabase.getInstance().reference.child("Staff").child("JE").child("Assistants")
+                    val staffMap=HashMap<String,Any>()
+                    staffMap["name"]=staffName.toString()
+                    staffMap["uid"]=uid.toString()
+                    staffMap["phone"]=phone.toString()
+                    dataReference.child(uid).updateChildren(staffMap)
+                    dataReference.child(staffUid.toString()).removeValue().addOnCompleteListener {
+                        if (task.isSuccessful){
+                            Toast.makeText(this,"success of JE",Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this@MainActivity,Home::class.java))
+                            finish()
+                        }
+                    }
+                }else{
+                    Toast.makeText(this,"success of staff",Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this@MainActivity,Home::class.java))
+                    finish()
+                }
+
             }
         }
 

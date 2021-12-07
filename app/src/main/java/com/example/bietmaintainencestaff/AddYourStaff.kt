@@ -34,9 +34,9 @@ class AddYourStaff : AppCompatActivity() {
                 }
                 else->{
                     val staffMap=HashMap<String,Any>()
-                    staffMap["id"]=timestamp
+                    staffMap["uid"]=timestamp
                     staffMap["name"]=edtStaffName.text.toString()
-                    staffMap["mobNo"]=edtStaffNo.text.toString()
+                    staffMap["phone"]=edtStaffNo.text.toString()
                     databaseReference.child("Assistants").child(timestamp).updateChildren(staffMap).addOnSuccessListener {
                         Toast.makeText(this,"Staff Added Successfully",Toast.LENGTH_SHORT).show()
                     }
