@@ -19,7 +19,7 @@ class ActivityPendingRequests : AppCompatActivity() {
         setContentView(R.layout.activity_pending_requests)
         hostelName=intent.getStringExtra("hostel").toString()
         listPendingRequests = ArrayList<ModalPendingRequest>()
-        //recyclerViewPending=findViewById()
+        recyclerViewPending=findViewById(R.id.rvPending)
         recyclerViewPending.layoutManager = LinearLayoutManager(this)
         databaseReference =
             FirebaseDatabase.getInstance().reference.child("Staff").child("JE").child("Requests").child(hostelName!!)

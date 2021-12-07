@@ -38,6 +38,8 @@ class DescriptionActivity : AppCompatActivity() {
         progressDialog.setCanceledOnTouchOutside(false)
         requestId = intent.getStringExtra("reqId").toString()
         requestById = intent.getStringExtra("reqById").toString()
+        hostel_Name=intent.getStringExtra("hostelName").toString()
+        hostelName.text = hostel_Name
         databaseReference =
             FirebaseDatabase.getInstance().reference.child("Staff").child("JE").child("Requests")
                 .child(hostel_Name)
@@ -48,12 +50,10 @@ class DescriptionActivity : AppCompatActivity() {
         databaseReference.child("PendingRequests").child(requestId!!)
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    hostel_Name = snapshot.child("hostelName").value.toString()
                     room_num = snapshot.child("roomNo").value.toString()
                     requested_By = snapshot.child("requestedBy").value.toString()
                     problem_request = snapshot.child("problem").value.toString()
                     phone_num = snapshot.child("mobNo").value.toString()
-                    hostelName.text = hostel_Name
                     roomNo.text = "Room No-" + room_num
                     requestedBy.text = requested_By
                     problem.text = problem_request
@@ -81,7 +81,7 @@ class DescriptionActivity : AppCompatActivity() {
                         requestHashMap["roomNo"] = room_num
                         requestHashMap["requestedBy"] = requested_By
                         requestHashMap["problem"] = problem_request.toString()
-                        requestHashMap["hostelName"] = hostelName
+                        requestHashMap["hostelName"] = hostel_Name
                         requestHashMap["mobNo"] = phone_num
                         requestHashMap["reqById"] = requestById!!
                         requestHashMap["status"] = "Ongoing"
@@ -97,7 +97,7 @@ class DescriptionActivity : AppCompatActivity() {
             builder.setNegativeButton("No") { text, listener ->
                 dialog.dismiss()
             }
-
+            builder.show()
         }
     }
 }
