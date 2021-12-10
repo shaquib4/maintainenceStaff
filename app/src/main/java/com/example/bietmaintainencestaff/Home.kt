@@ -46,7 +46,7 @@ class Home : AppCompatActivity() {
         val hostelArray = arrayOf(
             "Vrindavan Bhawan",
             "Saket Bhawan",
-            "Panchvati Bhawan",
+            "Pancvati Bhawan",
             "Atal Bihari Bhawan",
             "Rajendra Agnihotri Bhawan",
             "Yashodhra Bhawan",

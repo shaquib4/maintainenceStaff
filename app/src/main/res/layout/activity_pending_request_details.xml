@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ActivityPendingRequestDetails">
 
-    <TextView
+    <!--<TextView
         android:id="@+id/lbHostel"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
@@ -113,6 +113,6 @@
         android:textSize="20dp"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbProb" />
+        app:layout_constraintTop_toBottomOf="@+id/lbProb" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

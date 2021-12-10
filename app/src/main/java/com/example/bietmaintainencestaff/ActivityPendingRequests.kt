@@ -2,6 +2,7 @@ package com.example.bietmaintainencestaff
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bietmaintainencestaff.Adapters.AdapterPendingRequests
@@ -21,6 +22,7 @@ class ActivityPendingRequests : AppCompatActivity() {
         listPendingRequests = ArrayList<ModalPendingRequest>()
         recyclerViewPending=findViewById(R.id.rvPending)
         recyclerViewPending.layoutManager = LinearLayoutManager(this)
+        Toast.makeText(this,hostelName.toString(),Toast.LENGTH_SHORT).show()
         databaseReference =
             FirebaseDatabase.getInstance().reference.child("Staff").child("JE").child("Requests").child(hostelName!!)
         databaseReference.child("PendingRequests")

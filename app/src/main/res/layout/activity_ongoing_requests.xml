@@ -5,5 +5,116 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActivityOngoingRequests">
+    <RelativeLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/ongoing"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48sdp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_20ssp"
+            android:text="Ongoing Requests"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@+id/ongoing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        android:id="@+id/rl_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <RelativeLayout
+            android:id="@+id/rl_NothingReq"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_33sdp"
+            android:gravity="center"
+            android:layout_margin="@dimen/_7sdp"
+            android:layout_weight="1"
+            android:background="@drawable/textview_border">
+
+
+
+            <TextView
+                android:id="@+id/txtNoRequirement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_2sdp"
+
+                android:text="Nothing Required"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/NoRequirementNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/txtNoRequirement"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_2sdp"
+
+                android:text="(1000)"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12ssp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_materialRequired"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_33sdp"
+             android:gravity="center"
+            android:layout_margin="@dimen/_7sdp"
+            android:layout_weight="1"
+            android:background="@drawable/textview_border">
+
+            <TextView
+                android:id="@+id/txtMaterialRequired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+
+                android:textStyle="bold"
+                android:text="Material Required"
+                android:textColor="#000"
+                android:textSize="@dimen/_12ssp" />
+
+
+            <TextView
+                android:id="@+id/MaterialNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/txtMaterialRequired"
+                android:layout_centerVertical="true"
+
+
+                android:text="(1000)"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12ssp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        tools:listitem="@layout/pending_single"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_create" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
